@@ -35,5 +35,15 @@ describe Profile do
         email.body.should_not include(@profile.listings.first.url)
       end
     end
+
+    describe "with no new listings" do
+      before(:each) do
+        @profile.email_new_listings
+      end
+
+      it "should not send email" do
+        lambda { @profile.email_new_listings }.should_not change(ActionMailer::Base.deliveries, :count)
+      end
+    end
   end
 end

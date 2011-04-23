@@ -11,6 +11,6 @@ class Profile < ActiveRecord::Base
       new_listings << listing if listing.save
     end
 
-    ProfileMailer.new_listing_email(new_listings).deliver
+    ProfileMailer.new_listing_email(new_listings).deliver if new_listings.present?
   end
 end
