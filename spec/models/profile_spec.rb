@@ -3,9 +3,9 @@ require "spec_helper"
 describe Profile do
   describe "#email_new_listings" do
     before(:each) do
-      stub_request(:get, Craigslist::BASE_URL + "firewood").to_return(:body => File.read("spec/data/craigslist.html"))
+      stub_request(:get, Craigslist::BASE_URL + "blahh?srchType=A&minAsk=&maxAsk=&query=firewood").to_return(:body => File.read("spec/data/craigslist.html"))
 
-      @profile = Profile.create(:name => "Firewood Test", :phrase => "firewood")
+      @profile = Profile.create(:name => "Firewood Test", :phrase => "firewood", :category => "blahh")
     end
 
     it "should create listings" do

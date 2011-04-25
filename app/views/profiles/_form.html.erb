@@ -19,6 +19,10 @@
     <%= f.label :phrase %><br />
     <%= f.text_field :phrase %>
   </div>
+  <div class="field">
+    <%= f.label :category %><br />
+    <%= f.select :category, options_for_select([["Free", "zip"], ["For Sale", "sss"], ["Jobs", "jjj"]], @profile.category), { :include_blank => true } %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
