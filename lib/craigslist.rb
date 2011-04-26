@@ -10,6 +10,10 @@ class Craigslist
       listing = {}
       listing[:title] = row.css("a").first.content
       listing[:url] = row.css("a").first["href"]
+
+      image_span = row.css("span.ih").first
+      listing[:image] = image_span["id"][/^images:(.*)$/, 1] if image_span["id"]
+
       listings << listing
     end
 
