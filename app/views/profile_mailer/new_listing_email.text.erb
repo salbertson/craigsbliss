@@ -1,7 +1,7 @@
 New Posts
 
 <% @listings.each do |listing| %>
-  <%= listing.title %>
+  <%= listing.title %><%= " (pic)" if listing.image %>
   <%= listing.url %>
 
 <% end %>
