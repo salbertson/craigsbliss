@@ -1,4 +1,4 @@
-New Posts
+New <%= @listings.first.profile.name %> Posts
 
 <% @listings.each do |listing| %>
   <%= listing.title %><%= " (pic)" if listing.image %>
