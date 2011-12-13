@@ -2,7 +2,7 @@ class Craigslist
   BASE_URL = "http://sacramento.craigslist.org/search/"
 
   def search(phrase, category)
-    uri = URI.parse(BASE_URL + category + "?srchType=A&minAsk=&maxAsk=&query=" + phrase)
+    uri = URI.parse(BASE_URL + category + "?srchType=A&minAsk=&maxAsk=&query=" + CGI.escape(phrase))
     doc = Nokogiri::HTML(Net::HTTP.get(uri))
 
     listings = []
