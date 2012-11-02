@@ -31,3 +31,7 @@ group :test do
   gem 'rspec-rails'
   gem 'webmock'
 end
+
+group :development do
+  gem 'heroku'
+end
